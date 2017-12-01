@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">MuseoMobile</string>
+    <string name="ok">OK</string>
+    <string name="permission_camera_rationale">E\' necessario l\'accesso alla fotocamera per leggere il barcode</string>
+    <string name="no_camera_permission">Questa applicazione non può funzionare senza i permessi della fotocamera.  L'applicazione sarà chiusa.</string>
+    <string name="low_storage_error">Face detector dependencies cannot be downloaded due to low device storage</string>
+    <string name="title_activity_main">Museo</string>
+    <string name="barcode_header">Museo Archeologico di Durazzo</string>
+    <string name="read_barcode">Leggi Barcode Opera d\'Arte</string>
+    <string name="auto_focus">Auto Focus</string>
+    <string name="use_flash">Usa Flash</string>
+    <string name="barcode_success">Barcode letto con successo</string>
+    <string name="barcode_failure">Nessun barcode catturato Riprova</string>
+    <string name="barcode_error">"Errore lettura barcode: %1$s"</string>
+    <string name="applicationLabel">Museo Archeologico</string>
+    <string name="barcode_label">Inquadra Barcode</string>
+    <string name="scheda_reperto_label">Scheda Reperto</string>
+    <string name="todo">TODO</string>
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
+    <string name="stop">Stop</string>
+    <string name="contenuti_audio">Contenuti Audio</string>
+    <string name="contenuti_video">Contenuti Video</string>
+    <string name="audio_descrizione">Audio Descrizione</string>
+    <string name="lettore">Lettore Multimediale</string>
+    <string name="lettore_audio">Lettore Audio</string>
+    <string name="lettore_video">Lettore Video</string>
+    <string name="audioString">Ascolta la musica legata all\'opera d\'arte</string>
+    <string name="bottoneRitorna">Torna Indietro</string>
+    <string name="ferma_descrizione">Ferma descrizione</string>
+</resources>

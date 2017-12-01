@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorMediabground"
+    android:padding="20dp"
+    tools:context=".AudioPlayer">
+
+    <TextView
+        android:id="@+id/testoAudioPlayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:lineSpacingExtra="8sp"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:text="@string/lettore_audio"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:ignore="RtlHardcoded,RtlSymmetry" />
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/testoAudioPlayer">
+
+        <TableRow
+            android:gravity="center"
+            android:padding="20dp">
+
+            <SeekBar
+                android:id="@+id/bar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </TableRow>
+
+        <TableRow
+            android:gravity="center"
+            android:padding="10dp"
+            >
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:onClick="play"
+                android:text="@string/play" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="pause"
+
+                android:text="@string/pause" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="stop"
+
+                android:text="@string/stop" />
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/commentoAudioPlayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/testoAudioPlayer"
+        android:layout_marginTop="141dp"
+        android:lineSpacingExtra="8sp"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:text="@string/audioString"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        tools:ignore="RtlHardcoded,RtlSymmetry" />
+
+    <Button
+        android:id="@+id/bottoneRitorna"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="34dp"
+        android:text="@string/bottoneRitorna"
+        android:onClick="ritorna"   />
+</RelativeLayout>
