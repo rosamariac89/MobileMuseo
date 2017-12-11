@@ -23,7 +23,7 @@ public class VideoPlayer extends Activity implements SurfaceHolder.Callback {
     private SurfaceHolder holder;
     private SurfaceView surface;
     //private String ip = "192.168.1.74";
-    private String ip = "192.168.1.101";
+    private String ip = "192.168.1.102";
     private String video;
     private String operaId;
     private Uri uri;

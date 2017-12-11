@@ -19,7 +19,7 @@ import android.widget.VideoView;
 public class VideoPlayer2 extends AppCompatActivity {
 
     private static final String TAG =VideoPlayer2.class.getSimpleName();
-    private String ip = "192.168.1.101";
+    private String ip = "192.168.1.102";
     private String video;
     private String operaId;
     private Uri uri;
@@ -37,7 +37,7 @@ public class VideoPlayer2 extends AppCompatActivity {
         video = (String)intent.getSerializableExtra(pkg + ".video");
         operaId = (String)intent.getSerializableExtra(pkg + ".operaId");
        // final String  uriPath = "http://"+ip+":8088/video/"+video;
-        final String  uriPath = "http://192.168.1.101:8088/video/depechemodesomebody.mp4";
+        final String  uriPath = "http://192.168.1.102:8088/video/depechemodesomebody.mp4";
 
         String fileName = "somebody";
         String filePlace = "android.resource://"+getPackageName()+"/raw/"+fileName;

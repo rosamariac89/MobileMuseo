@@ -37,7 +37,7 @@ public class SchedaReperto extends Activity implements View.OnClickListener{
     private String operaId;
 
     //private String ip= "192.168.1.101";
-    private String ip="192.168.1.101";
+    private String ip="192.168.1.102";
     private TextView descrizShort;
     private TextView titolo;
     private TextView annoPubblicazione;
@@ -255,7 +255,7 @@ public class SchedaReperto extends Activity implements View.OnClickListener{
             //System.out.println(operaDarte.get("Immagine"));
             Context context = getApplicationContext();
             Glide.with(context)
-                    .load("http://192.168.1.74:8088/img/"+operaDarte.get("Immagine"))
+                    .load("http://192.168.1.102:8088/img/"+operaDarte.get("Immagine"))
                     .into(immagine);
 
         }
