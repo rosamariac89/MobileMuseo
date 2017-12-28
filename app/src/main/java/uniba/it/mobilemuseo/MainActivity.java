@@ -11,9 +11,6 @@ import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.common.api.CommonStatusCodes;
-import com.google.android.gms.vision.barcode.Barcode;
-
 /**
  * Main activity demonstrating how to pass extra parameters to an activity that
  * reads barcodes.
@@ -102,14 +99,16 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
     @Override
     protected void onStart() {
-        Log.i(TAG, "onStart()");
         super.onStart();
+        Log.i(TAG, "onStart()");
+
     }
 
     @Override
     protected void onResume() {
-        Log.i(TAG, "onResume()");
         super.onResume();
+        Log.i(TAG, "onResume()");
+
     }
 
     @Override
@@ -120,15 +119,16 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     @Override
     protected void onStop() {
-        Log.i(TAG, "onStop()");
         super.onStop();
+        Log.i(TAG, "onStop()");
+
     }
 
     @Override
     protected void onDestroy() {
-        Log.i(TAG, "onDestroy()");
         super.onDestroy();
+        Log.i(TAG, "onDestroy()");
+
     }
 
 }
-

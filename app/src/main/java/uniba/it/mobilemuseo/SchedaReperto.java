@@ -13,19 +13,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.bumptech.glide.Glide;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.HashMap;
 import java.util.Locale;
-
-/**
- * Created by Rosamaria matricola 551125 on 30/10/2017.
- */
 
 public class SchedaReperto extends Activity implements View.OnClickListener{
 
@@ -37,7 +30,7 @@ public class SchedaReperto extends Activity implements View.OnClickListener{
     private String operaId;
 
     //private String ip= "192.168.1.101";
-    private String ip="192.168.1.102";
+    private String ip="192.168.43.191";
     private TextView descrizShort;
     private TextView titolo;
     private TextView annoPubblicazione;
@@ -54,13 +47,15 @@ public class SchedaReperto extends Activity implements View.OnClickListener{
     private String vsTipologia;
     private String vsArtista;
 
+
     private HashMap<String, String> operaDarte;
     private HashMap<String, String> artista;
     private HashMap<String, String> tipologia;
 
-    TextToSpeech lettoreTesto;
-    Button audioDescrizione;
-    Button stopButton;
+    private TextToSpeech lettoreTesto;
+    private Button audioDescrizione;
+    private Button stopButton;
+
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,7 +115,7 @@ public class SchedaReperto extends Activity implements View.OnClickListener{
         stopButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               if(lettoreTesto !=null){
+                if(lettoreTesto !=null){
                     lettoreTesto.stop();
                     if(!lettoreTesto.isSpeaking()){
                         Toast.makeText(getApplicationContext(), "Audio Lettore non attivo ! ",Toast.LENGTH_SHORT).show();
@@ -161,7 +156,7 @@ public class SchedaReperto extends Activity implements View.OnClickListener{
             String jsonStr = sh.makeServiceCall(url);
 
 
-            Log.i(TAG, "Response from url: " + jsonStr);
+            //Log.i(TAG, "Response from url: " + jsonStr);
             if (jsonStr != null) {
                 try {
                     JSONObject jsonObj = new JSONObject(jsonStr);
@@ -171,49 +166,50 @@ public class SchedaReperto extends Activity implements View.OnClickListener{
                     JSONArray opere = jsonObj.getJSONArray("json");
                     for(int i = 0;i<opere.length();i++) {
                         JSONObject c = opere.getJSONObject(i);
-                            if(c.getString("id").equals( operaId)){
+                        if(c.getString("id").equals( operaId)){
 
-                                String idOpera = c.getString("id");
-                                String annoPubblicazione = c.getString("AnnoPubblicazione");
-                                String titolo = c.getString("Titolo");
-                                String descrizioneShort = c.getString("DescrizioneShort");
-                                String descrizioneEstesa = c.getString("DescrizioneEstesa");
-                                String vsMuseo = c.getString("vsMuseo");
-                                vsTipologia = c.getString("vsTipologia");  // tipologia get
-                                vsArtista = c.getString("vsArtista"); // artista get
-                                String dimensione = c.getString("Dimensione");
-                                String periodo = c.getString("Periodo");
-                                String peso = c.getString("Peso");
-                                String cultura = c.getString("Cultura");
-                                String valore = c.getString("Valore");
-                                String proprietario = c.getString("Proprietario");
-
-
-                                String immagine=c.getString("Immagine");
-                                String audio = c.getString("Audio");
-                                String video = c.getString("Video");       // da completare
-
-                                operaDarte.put("idOperaDarte",idOpera);
-                                operaDarte.put("Titolo",titolo);
-                                operaDarte.put("DescrizioneShort",descrizioneShort);
-                                operaDarte.put("AnnoPubblicazione",annoPubblicazione);
-                                operaDarte.put("Dimensione",dimensione);
-                                operaDarte.put("Periodo",periodo);
-                                operaDarte.put("Peso",peso);
-                                operaDarte.put("Cultura",cultura);
-                                operaDarte.put("Valore",valore);
-                                operaDarte.put("Proprietario",proprietario);
-                                operaDarte.put("Immagine",immagine);
-                                operaDarte.put("Audio",audio);
-                                operaDarte.put("Video",video);
+                            String idOpera = c.getString("id");
+                            String annoPubblicazione = c.getString("AnnoPubblicazione");
+                            String titolo = c.getString("Titolo");
+                            String descrizioneShort = c.getString("DescrizioneShort");
+                            String descrizioneEstesa = c.getString("DescrizioneEstesa");
+                            String vsMuseo = c.getString("vsMuseo");
+                            vsTipologia = c.getString("vsTipologia");  // tipologia get
+                            vsArtista = c.getString("vsArtista"); // artista get
+                            String dimensione = c.getString("Dimensione");
+                            String periodo = c.getString("Periodo");
+                            String peso = c.getString("Peso");
+                            String cultura = c.getString("Cultura");
+                            String valore = c.getString("Valore");
+                            String proprietario = c.getString("Proprietario");
 
 
-                                }
-                         }
+                            String immagine=c.getString("Immagine");
+                            String audio = c.getString("Audio");
+                            String video = c.getString("Video");
+
+
+                            operaDarte.put("idOperaDarte",idOpera);
+                            operaDarte.put("Titolo",titolo);
+                            operaDarte.put("DescrizioneShort",descrizioneShort);
+                            operaDarte.put("AnnoPubblicazione",annoPubblicazione);
+                            operaDarte.put("Dimensione",dimensione);
+                            operaDarte.put("Periodo",periodo);
+                            operaDarte.put("Peso",peso);
+                            operaDarte.put("Cultura",cultura);
+                            operaDarte.put("Valore",valore);
+                            operaDarte.put("Proprietario",proprietario);
+                            operaDarte.put("Immagine",immagine);
+                            operaDarte.put("Audio",audio);
+                            operaDarte.put("Video",video);
+
+
+                        }
+                    }
 
 
                 } catch (final JSONException e) {
-                    Log.e(TAG, "Json parsing error: " + e.getMessage());
+                    //Log.e(TAG, "Json parsing error: " + e.getMessage());
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -255,7 +251,7 @@ public class SchedaReperto extends Activity implements View.OnClickListener{
             //System.out.println(operaDarte.get("Immagine"));
             Context context = getApplicationContext();
             Glide.with(context)
-                    .load("http://192.168.1.102:8088/img/"+operaDarte.get("Immagine"))
+                    .load("http://192.168.43.191:8088/img/"+operaDarte.get("Immagine"))
                     .into(immagine);
 
         }
@@ -277,7 +273,7 @@ public class SchedaReperto extends Activity implements View.OnClickListener{
             String jsonStr = sh.makeServiceCall(url);
 
 
-            Log.i(TAG, "Response from url: " + jsonStr);
+            //Log.i(TAG, "Response from url: " + jsonStr);
             if (jsonStr != null) {
                 try {
                     JSONObject jsonObj = new JSONObject(jsonStr);
@@ -304,7 +300,7 @@ public class SchedaReperto extends Activity implements View.OnClickListener{
 
 
                 } catch (final JSONException e) {
-                    Log.e(TAG, "Json parsing error: " + e.getMessage());
+                    //Log.e(TAG, "Json parsing error: " + e.getMessage());
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -356,7 +352,7 @@ public class SchedaReperto extends Activity implements View.OnClickListener{
             String jsonStr = sh.makeServiceCall(url);
 
 
-            Log.i(TAG, "Response from url: " + jsonStr);
+            //Log.i(TAG, "Response from url: " + jsonStr);
             if (jsonStr != null) {
                 try {
                     JSONObject jsonObj = new JSONObject(jsonStr);
@@ -379,7 +375,7 @@ public class SchedaReperto extends Activity implements View.OnClickListener{
 
 
                 } catch (final JSONException e) {
-                    Log.e(TAG, "Json parsing error: " + e.getMessage());
+                    //Log.e(TAG, "Json parsing error: " + e.getMessage());
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -392,7 +388,7 @@ public class SchedaReperto extends Activity implements View.OnClickListener{
                 }
 
             } else {
-                Log.e(TAG, "Couldn't get json from server.");
+                //Log.e(TAG, "Couldn't get json from server.");
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -416,6 +412,8 @@ public class SchedaReperto extends Activity implements View.OnClickListener{
     }
 
 
+
+
     public void contenutiAudio(View button) {
         Intent audio_intent = new Intent(this,AudioPlayer.class);
         String pkg = getPackageName();
@@ -423,10 +421,10 @@ public class SchedaReperto extends Activity implements View.OnClickListener{
         audio_intent.putExtra(pkg+".operaId",operaId);
         startActivityForResult(audio_intent, 1);
 
-        }
+    }
     public void contenutiVideo(View button) {
-       // Intent video_intent = new Intent(this,VideoPlayer2.class);       //  video player 2
-        Intent video_intent = new Intent(this,VideoPlayer.class);  // video player
+        Intent video_intent = new Intent(this,VideoPlayer2.class);       //  video player 2
+        //Intent video_intent = new Intent(this,VideoPlayer.class);  // video player
         String pkg = getPackageName();
         video_intent.putExtra(pkg+".video",operaDarte.get("Video"));
         video_intent.putExtra(pkg+".operaId",operaId);
@@ -448,14 +446,15 @@ public class SchedaReperto extends Activity implements View.OnClickListener{
     }
     @Override
     protected void onStart() {
-        Log.i(TAG, "onStart()");
         super.onStart();
+        Log.i(TAG, "onStart()");
+
     }
 
     @Override
     protected void onResume() {
-        Log.i(TAG, "onResume()");
         super.onResume();
+        Log.i(TAG, "onResume()");
         if(lettoreTesto !=null){
             lettoreTesto.stop();
             lettoreTesto.shutdown();
@@ -466,22 +465,24 @@ public class SchedaReperto extends Activity implements View.OnClickListener{
     protected void onPause() {
         Log.i(TAG, "onPause()");
         super.onPause();
+
     }
 
     @Override
     protected void onStop() {
         Log.i(TAG, "onStop()");
         super.onStop();
+
     }
 
     @Override
     protected void onDestroy() {
         Log.i(TAG, "onDestroy()");
-        super.onDestroy();
         if(lettoreTesto !=null){
             lettoreTesto.stop();
             lettoreTesto.shutdown();
         }
+        super.onDestroy();
     }
 
 

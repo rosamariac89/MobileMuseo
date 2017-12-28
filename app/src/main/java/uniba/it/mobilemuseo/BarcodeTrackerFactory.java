@@ -17,8 +17,7 @@ package uniba.it.mobilemuseo;
 
 import android.content.Context;
 
-import com.google.android.gms.vision.MultiProcessor;
-import com.google.android.gms.vision.Tracker;
+import com.google.android.gms.vision.*;
 import com.google.android.gms.vision.barcode.Barcode;
 
 import uniba.it.mobilemuseo.ui.camera.GraphicOverlay;

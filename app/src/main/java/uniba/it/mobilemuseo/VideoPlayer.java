@@ -12,8 +12,9 @@ import android.view.SurfaceView;
 import android.view.View;
 
 
+
 /**
- * Created by Rosamaria matricola 551125 on 13/11/2017.
+ * Created by Cespites RosaMaria matricola 551125 on 13/11/2017.
  */
 
 public class VideoPlayer extends Activity implements SurfaceHolder.Callback {
@@ -22,8 +23,7 @@ public class VideoPlayer extends Activity implements SurfaceHolder.Callback {
     private MediaPlayer mediaPlayer;
     private SurfaceHolder holder;
     private SurfaceView surface;
-    //private String ip = "192.168.1.74";
-    private String ip = "192.168.1.102";
+    private String ip = "192.168.43.191";
     private String video;
     private String operaId;
     private Uri uri;
@@ -51,16 +51,16 @@ public class VideoPlayer extends Activity implements SurfaceHolder.Callback {
         uri = Uri.parse(uriPath);
 
 
-        }
+    }
 
 
     public void surfaceCreated(SurfaceHolder surfaceHolder) {
 
-             //mediaPlayer= MediaPlayer.create(this, uri);
-             mediaPlayer= MediaPlayer.create(this,R.raw.shimbalai);
+        //mediaPlayer= MediaPlayer.create(this, uri);
+        mediaPlayer= MediaPlayer.create(this,R.raw.shimbalai);
 
-            mediaPlayer.setDisplay(holder);
-            mediaPlayer.setOnPreparedListener(
+        mediaPlayer.setDisplay(holder);
+        mediaPlayer.setOnPreparedListener(
                 new MediaPlayer.OnPreparedListener() {
                     @Override
                     public void onPrepared(MediaPlayer mediaPlayer) {
@@ -98,34 +98,38 @@ public class VideoPlayer extends Activity implements SurfaceHolder.Callback {
     }
 
     protected void onStart() {
-        Log.i(TAG, "onStart()");
         super.onStart();
+        Log.i(TAG, "onStart()");
+
     }
 
     @Override
     protected void onResume() {
-        Log.i(TAG, "onResume()");
         super.onResume();
+        Log.i(TAG, "onResume()");
+
     }
 
     @Override
     protected void onPause() {
         Log.i(TAG, "onPause()");
         super.onPause();
+
     }
 
     @Override
     protected void onStop() {
         Log.i(TAG, "onStop()");
         super.onStop();
+
     }
 
     @Override
     protected void onDestroy() {
         Log.i(TAG, "onDestroy()");
-        super.onDestroy();
         mediaPlayer.release();
         mediaPlayer = null;
+        super.onDestroy();
     }
 
 

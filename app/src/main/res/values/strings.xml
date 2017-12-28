@@ -4,7 +4,7 @@
     <string name="permission_camera_rationale">E\' necessario l\'accesso alla fotocamera per leggere il barcode</string>
     <string name="no_camera_permission">Questa applicazione non può funzionare senza i permessi della fotocamera.  L'applicazione sarà chiusa.</string>
     <string name="low_storage_error">Face detector dependencies cannot be downloaded due to low device storage</string>
-    <string name="title_activity_main">Museo</string>
+    <string name="title_activity_main">Mobile Museo</string>
     <string name="barcode_header">Museo Archeologico di Durazzo</string>
     <string name="read_barcode">Leggi Barcode Opera d\'Arte</string>
     <string name="auto_focus">Auto Focus</string>

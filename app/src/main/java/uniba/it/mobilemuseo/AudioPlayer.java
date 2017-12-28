@@ -12,16 +12,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.SeekBar;
 
+import java.io.IOException;
 
-/**
- * Created by Rosamaria matricola 551125 on 16/11/2017.
- */
 
 public class AudioPlayer extends Activity {
 
     private static final String TAG =AudioPlayer.class.getSimpleName();
     private MediaPlayer mp=null;
-    String ip = "192.168.1.102";
+    String ip = "192.168.43.191";
     private Handler handler = new Handler();
     private double startTime = 0;
     private SeekBar sk=null;
@@ -63,8 +61,8 @@ public class AudioPlayer extends Activity {
     {
         try {
             mp.start();
-           if(mp.getDuration() != 0){
-            sk.setMax((int) mp.getDuration());
+            if(mp.getDuration() != 0){
+                sk.setMax((int) mp.getDuration());
             }
             else{
                 sk.setMax(181000);
@@ -98,40 +96,44 @@ public class AudioPlayer extends Activity {
         Intent indietro_intent = new Intent(this,SchedaReperto.class);
         String pkg = getPackageName();
         indietro_intent.putExtra(pkg+".operaId",operaId);
-       // startActivityForResult(indietro_intent, 1);
+        // startActivityForResult(indietro_intent, 1);
         setResult(RESULT_OK, indietro_intent);
         finish();
     }
 
     protected void onStart() {
-        Log.i(TAG, "onStart()");
         super.onStart();
+        Log.i(TAG, "onStart()");
+
     }
 
     @Override
     protected void onResume() {
-        Log.i(TAG, "onResume()");
         super.onResume();
+        Log.i(TAG, "onResume()");
+
     }
 
     @Override
     protected void onPause() {
         Log.i(TAG, "onPause()");
         super.onPause();
+
     }
 
     @Override
     protected void onStop() {
         Log.i(TAG, "onStop()");
         super.onStop();
+
     }
 
     @Override
     protected void onDestroy() {
         Log.i(TAG, "onDestroy()");
-        super.onDestroy();
         mp.release();
         mp = null;
+        super.onDestroy();
     }
 
 
