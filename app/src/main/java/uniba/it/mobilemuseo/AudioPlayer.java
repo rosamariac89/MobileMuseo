@@ -19,7 +19,7 @@ public class AudioPlayer extends Activity {
 
     private static final String TAG =AudioPlayer.class.getSimpleName();
     private MediaPlayer mp=null;
-    String ip = "192.168.43.191";
+    String ip = "192.168.1.101";
     private Handler handler = new Handler();
     private double startTime = 0;
     private SeekBar sk=null;

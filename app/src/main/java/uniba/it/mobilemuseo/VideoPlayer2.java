@@ -31,7 +31,7 @@ import java.net.URLConnection;
 public class VideoPlayer2 extends AppCompatActivity {
 
     private static final String TAG =VideoPlayer2.class.getSimpleName();
-    private String ip = "192.168.43.191";
+    private String ip = "192.168.1.101";
     private String video;
     private String operaId;
     private Uri uri;
@@ -53,7 +53,7 @@ public class VideoPlayer2 extends AppCompatActivity {
 
         new downloadVideo().execute();
         // final String  uriPath = "http://"+ip+":8088/video/"+video;
-        //final String  uriPath = "http://192.168.1.74:8088/video/depechemodesomebody.mp4";
+
 
         //String fileName = "somebody";
         //String filePlace = "android.resource://"+getPackageName()+"/raw/"+fileName;
@@ -98,7 +98,7 @@ public class VideoPlayer2 extends AppCompatActivity {
 
                 file = new File(sd,video);
 
-                URL url = new URL("http://192.168.43.191:8088/video/"+video);
+                URL url = new URL("http://192.168.1.101:8088/video/"+video);
                 URLConnection conexion = url.openConnection();
                 conexion.connect();
 
