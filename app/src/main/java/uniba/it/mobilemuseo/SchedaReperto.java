@@ -348,7 +348,7 @@ public class SchedaReperto extends Activity implements View.OnClickListener{
         protected Void doInBackground(Void... arg0) {
             HttpHandler sh = new HttpHandler();
             // Making a request to url and getting response
-            String url = "http://"+ip+":8000/api/Tipologia/";//http://10.0.2.2:8000/api/Rilevazione/
+            String url = "http://"+ip+":8000/api/Tipologia/";
             String jsonStr = sh.makeServiceCall(url);
 
 
