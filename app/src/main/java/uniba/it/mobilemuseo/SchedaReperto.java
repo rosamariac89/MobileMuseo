@@ -29,7 +29,7 @@ public class SchedaReperto extends Activity implements View.OnClickListener{
     private static final int RC_BARCODE_CAPTURE = 9001;
     private String operaId;
 
-    private String ip= "192.168.1.101";
+    private String ip= "192.168.1.171";
     //private String ip="192.168.43.191";
     private TextView descrizShort;
     private TextView titolo;
@@ -251,7 +251,7 @@ public class SchedaReperto extends Activity implements View.OnClickListener{
             //System.out.println(operaDarte.get("Immagine"));
             Context context = getApplicationContext();
             Glide.with(context)
-                    .load("http://192.168.1.101:8088/img/"+operaDarte.get("Immagine"))
+                    .load("http://192.168.1.171:8088/img/"+operaDarte.get("Immagine"))
                     .into(immagine);
 
         }
@@ -348,7 +348,7 @@ public class SchedaReperto extends Activity implements View.OnClickListener{
         protected Void doInBackground(Void... arg0) {
             HttpHandler sh = new HttpHandler();
             // Making a request to url and getting response
-            String url = "http://"+ip+":8000/api/Tipologia/";//http://10.0.2.2:8000/api/Rilevazione/
+            String url = "http://"+ip+":8000/api/Tipologia/";
             String jsonStr = sh.makeServiceCall(url);
 
 
@@ -423,8 +423,7 @@ public class SchedaReperto extends Activity implements View.OnClickListener{
 
     }
     public void contenutiVideo(View button) {
-        Intent video_intent = new Intent(this,VideoPlayer2.class);       //  video player 2
-        //Intent video_intent = new Intent(this,VideoPlayer.class);  // video player
+        Intent video_intent = new Intent(this,VideoPlayer.class);
         String pkg = getPackageName();
         video_intent.putExtra(pkg+".video",operaDarte.get("Video"));
         video_intent.putExtra(pkg+".operaId",operaId);
@@ -432,7 +431,7 @@ public class SchedaReperto extends Activity implements View.OnClickListener{
     }
 
     public void onClick(View v) {
-
+        Log.e(TAG, "Json parsing error: " );
 
     }
 

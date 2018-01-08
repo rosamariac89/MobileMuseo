@@ -50,9 +50,6 @@
         <activity android:name=".VideoPlayer"
             android:label="@string/lettore"
             />
-        <activity android:name=".VideoPlayer2"
-            android:label="@string/lettore"
-            />
     </application>
 
 </manifest>
