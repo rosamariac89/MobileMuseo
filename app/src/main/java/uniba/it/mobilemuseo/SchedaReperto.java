@@ -29,7 +29,7 @@ public class SchedaReperto extends Activity implements View.OnClickListener{
     private static final int RC_BARCODE_CAPTURE = 9001;
     private String operaId;
 
-    private String ip= "192.168.1.171";
+    private String ip= "192.168.1.171";   //indirizzo ip 
     //private String ip="192.168.43.191";
     private TextView descrizShort;
     private TextView titolo;
